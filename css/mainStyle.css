@@ -1,0 +1,53 @@
+
+/* example import font */
+/* @font-face {
+    font-family: "Montserrat";
+    src: url("fonts/Montserrat/static/Montserrat-Medium.ttf");
+} */
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    /* Default font use (optional) */
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+center {
+    border: 1px solid black;
+    margin: 10px;
+}
+
+.game_box {
+    display: flex;
+    border: 1px solid black;
+    margin: 10px;
+
+    justify-content: center; /* centers horizontally */
+    align-items: center;     /* centers vertically */
+}
+
+.game_box button {
+    padding: 5px 30px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+.border_px1 {
+    border: 1px solid black;
+}
+
+.marginLeft_10 {
+    margin-left: 10px;
+}
+.marginRight_10 {
+    margin-right: 10px;
+}
+
+.padding_10 {
+    padding: 10px;
+}
