@@ -1,6 +1,5 @@
 Soon!
 
 
-Testing field
-================================================================================
-### :man_technologist: About Me :
+---
+### :man_technologist: Author : Kuroz Tokimuri
