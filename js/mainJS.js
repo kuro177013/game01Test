@@ -77,6 +77,21 @@ document.getElementById("playerBtn02").addEventListener("click", function() {
     button2Timeout = setTimeout(playerHit_2, 10);
 });
 
+
+
+
+
+// Use 'touchstart' instead of 'click' for mobile compatibility
+document.getElementById("playerBtn01").addEventListener("touchstart", function(event) {
+    event.preventDefault(); // Prevents default touch behavior
+    playerHit_1();
+});
+
+document.getElementById("playerBtn02").addEventListener("touchstart", function(event) {
+    event.preventDefault();
+    playerHit_2();
+});
+
 /*********************************************************************************************************
  * 
  * 
