@@ -149,8 +149,8 @@ function debounce(func, delay) {
 }
 
 // Debounced handlers for each player
-const debouncedPlayerHit_1 = debounce(playerHit_1, 300); // 300 ms debounce
-const debouncedPlayerHit_2 = debounce(playerHit_2, 300);
+const debouncedPlayerHit_1 = debounce(playerHit_1, 100); // 300 ms debounce
+const debouncedPlayerHit_2 = debounce(playerHit_2, 100);
 
 // Apply both 'pointerdown' and 'touchstart' for mobile and desktop support
 ["pointerdown", "touchstart"].forEach(eventType => {
