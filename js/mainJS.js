@@ -43,54 +43,128 @@
 
 
 
+
+
+
+
+
+
+
+// let PlayerHitCounter_1 = 0;
+// let PlayerHitCounter_2 = 0;
+
+// const meterBar1 = document.getElementById("meterBar1");
+// const meterBar2 = document.getElementById("meterBar2");
+
+// // Player 1
+// function playerHit_1() {
+//     PlayerHitCounter_1 += 10;
+//     meterBar1.style.height = (50 + PlayerHitCounter_1) + "px";
+//     document.getElementById("displayPLayerCounter1").innerHTML = PlayerHitCounter_1;
+// }
+
+// // Player 2
+// function playerHit_2() {
+//     PlayerHitCounter_2 += 10;
+//     meterBar2.style.height = (50 + PlayerHitCounter_2) + "px";
+//     document.getElementById("displayPLayerCounter2").innerHTML = PlayerHitCounter_2;
+// }
+
+// // Debounced Button Handlers
+// let button1Timeout;
+// let button2Timeout;
+
+// document.getElementById("playerBtn01").addEventListener("click", function() {
+//     clearTimeout(button1Timeout);
+//     button1Timeout = setTimeout(playerHit_1, 10);
+// });
+
+// document.getElementById("playerBtn02").addEventListener("click", function() {
+//     clearTimeout(button2Timeout);
+//     button2Timeout = setTimeout(playerHit_2, 10);
+// });
+
+
+
+
+
+// // Use 'touchstart' instead of 'click' for mobile compatibility
+// document.getElementById("playerBtn01").addEventListener("touchstart", function(event) {
+//     event.preventDefault(); // Prevents default touch behavior
+//     playerHit_1();
+// });
+
+// document.getElementById("playerBtn02").addEventListener("touchstart", function(event) {
+//     event.preventDefault();
+//     playerHit_2();
+// });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 let PlayerHitCounter_1 = 0;
 let PlayerHitCounter_2 = 0;
 
 const meterBar1 = document.getElementById("meterBar1");
 const meterBar2 = document.getElementById("meterBar2");
 
-// Player 1
+// Player 1 and Player 2 functions
 function playerHit_1() {
     PlayerHitCounter_1 += 10;
     meterBar1.style.height = (50 + PlayerHitCounter_1) + "px";
     document.getElementById("displayPLayerCounter1").innerHTML = PlayerHitCounter_1;
 }
 
-// Player 2
 function playerHit_2() {
     PlayerHitCounter_2 += 10;
     meterBar2.style.height = (50 + PlayerHitCounter_2) + "px";
     document.getElementById("displayPLayerCounter2").innerHTML = PlayerHitCounter_2;
 }
 
-// Debounced Button Handlers
-let button1Timeout;
-let button2Timeout;
+// Debounce function to limit how often player actions can be triggered
+function debounce(func, delay) {
+    let timeout;
+    return function(...args) {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(this, args), delay);
+    };
+}
 
-document.getElementById("playerBtn01").addEventListener("click", function() {
-    clearTimeout(button1Timeout);
-    button1Timeout = setTimeout(playerHit_1, 10);
+// Debounced handlers for each player
+const debouncedPlayerHit_1 = debounce(playerHit_1, 300); // 300 ms debounce
+const debouncedPlayerHit_2 = debounce(playerHit_2, 300);
+
+// Apply both 'pointerdown' and 'touchstart' for mobile and desktop support
+["pointerdown", "touchstart"].forEach(eventType => {
+    document.getElementById("playerBtn01").addEventListener(eventType, function(event) {
+        event.preventDefault(); // Prevents default actions like scrolling
+        debouncedPlayerHit_1();
+    });
+    
+    document.getElementById("playerBtn02").addEventListener(eventType, function(event) {
+        event.preventDefault();
+        debouncedPlayerHit_2();
+    });
 });
 
-document.getElementById("playerBtn02").addEventListener("click", function() {
-    clearTimeout(button2Timeout);
-    button2Timeout = setTimeout(playerHit_2, 10);
-});
-
-
-
-
-
-// Use 'touchstart' instead of 'click' for mobile compatibility
-document.getElementById("playerBtn01").addEventListener("touchstart", function(event) {
-    event.preventDefault(); // Prevents default touch behavior
-    playerHit_1();
-});
-
-document.getElementById("playerBtn02").addEventListener("touchstart", function(event) {
-    event.preventDefault();
-    playerHit_2();
-});
 
 /*********************************************************************************************************
  * 
