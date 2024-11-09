@@ -84,16 +84,6 @@ document.getElementById("playerBtn02").addEventListener("click", function() {
  * 
  * 
  *********************************************************************************************************/
-// document.addEventListener("keydown", function(event) {
-
-//     if (event.key === "A" || event.key === "a") {
-//         document.getElementById("playerBtn01").click();
-//     }
-//     if (event.key === "L" || event.key === "l") {
-//         document.getElementById("playerBtn02").click();
-//     }
-// });
-
 
 // Track whether each key is being held down
 let aKeyHeld = false;
