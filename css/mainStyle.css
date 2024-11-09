@@ -29,8 +29,9 @@ center {
 }
 
 .game_box button {
-    padding: 5px 30px;
+    padding: 10px 50px;
     cursor: pointer;
+    width: 100%;
 }
 
 table {
