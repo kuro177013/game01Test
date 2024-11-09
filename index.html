@@ -10,39 +10,65 @@
 
     <!-- CSS Style -->
     <link rel="stylesheet" href="css/mainStyle.css" />
+    <link rel="stylesheet" href="css/gameResource.css" />
 </head>
 <body>
 
 
     <!-- Body -->
     <center>
-        <h1>Hello po!</h1>
+        <h1>Game 01 - Test</h1>
     </center>
 
-    <div class="game_box">
-        <div align="center" class="marginRight_10 border_px1 padding_10">
-            <div class="border_px1">
-                <h3>Player 1</h3>
-                <br>
-                <p id="displayPLayerCounter1">counter 1</p>
-            </div>
-            <br>
-            <button type="button" onclick="(playerHit_1())">Hit</button>
-        </div>
-
-        <div align="center" class="marginLeft_10 border_px1 padding_10">
-            <div class="border_px1">
-                <h3>Player 2</h3>
-                <br>
-                <p id="displayPLayerCounter2">counter 2</p>
-            </div>
-            <br>
-            <button type="button" onclick="(playerHit_2())">Hit</button>
-        </div>
+    <div align="center" class="game_box" id="game_box">
+        <table>
+            <tr>
+                <td>
+                    <div align="center" class="playerBox1">
+                        <h3>Player 1</h3>
+                        <div class="actionFieldPlayer1">
+                            <div class="border_px1">
+                                <div id="meterBar1"></div>
+                                <p id="displayPLayerCounter1">counter 1</p>
+                            </div>
+                        </div>
+                        <br>
+                        <!-- <button type="button" id="playerBtn01" onclick="(playerHit_1())">Hit</button> -->
+                        <button type="button" id="playerBtn01">Hit</button>
+                    </div>
+                </td>
+                <td>
+                    <div align="center" class="playerBox2">
+                        <h3>Player 2</h3>
+                        <div class="actionFieldPlayer2"> 
+                            <div class="border_px1">
+                                <div id="meterBar2"></div>
+                                <p id="displayPLayerCounter2">counter 2</p>
+                            </div>
+                        </div>
+                        <br>
+                        <!-- <button type="button" id="playerBtn02" onclick="(playerHit_2())">Hit</button> -->
+                        <button type="button" id="playerBtn02">Hit</button>
+                    </div> 
+                </td>
+            </tr>
+        </table>
     </div>
+    <br>
+    <br>
+    <br>
+    <p style="text-align: center;">
+        <b>NOTE:</b> This project still prototype, there's will be more update! (updates on every week) <br><br>
+        Press "A" for Player 1. <br>
+        Press "L" for Player 2.
+    </p>
+    <br>
+    <br>
+    <br>
 
 </body>
 <footer>
+    Version 0.2
     <!-- JavaScript -->
     <script type="text/javascript" src="js/mainJS.js"></script>
 </footer>

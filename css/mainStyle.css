@@ -19,12 +19,8 @@ center {
 }
 
 .game_box {
-    display: flex;
     border: 1px solid black;
-    margin: 10px;
-
-    justify-content: center; /* centers horizontally */
-    align-items: center;     /* centers vertically */
+    padding: 30px 10px 10px 10px;
 }
 
 .game_box button {
@@ -32,6 +28,17 @@ center {
     cursor: pointer;
 }
 
+table {
+    border: 1px solid black;
+    position: relative;
+    bottom: 0px;
+}
+
+
+footer {
+    border: 1px solid black;
+    text-align: center;
+}
 
 
 
