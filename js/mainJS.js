@@ -13,33 +13,70 @@
  * 
  * 
  *********************************************************************************************************/
-const element = document.getElementById("playerBtn01");
-const elementb = document.getElementById("playerBtn02");
-element.addEventListener("click", playerHit_1);
-elementb.addEventListener("click", playerHit_2);
+
+
+// let PlayerHitCounter_1 = 0;
+// let PlayerHitCounter_2 = 0;
+
+// let pushBtnKeyHeld_1 = false;
+// let pushBtnKeyHeld_2 = false;
+
+// // Player 1
+// function playerHit_1() {
+
+//     meterBar1.style.height = (50 + (PlayerHitCounter_1 = PlayerHitCounter_1 + 10)) + "px";
+
+//     document.getElementById("displayPLayerCounter1").innerHTML = PlayerHitCounter_1;
+// }
+
+// // Player 2
+// function playerHit_2() {
+
+//     meterBar2.style.height = (50 + (PlayerHitCounter_2 = PlayerHitCounter_2 + 10)) + "px";
+
+//     document.getElementById("displayPLayerCounter2").innerHTML = PlayerHitCounter_2;
+// }
+
+
+
+
+
 
 
 let PlayerHitCounter_1 = 0;
 let PlayerHitCounter_2 = 0;
 
-let pushBtnKeyHeld_1 = false;
-let pushBtnKeyHeld_2 = false;
+const meterBar1 = document.getElementById("meterBar1");
+const meterBar2 = document.getElementById("meterBar2");
 
 // Player 1
 function playerHit_1() {
-
-    meterBar1.style.height = (50 + (PlayerHitCounter_1 = PlayerHitCounter_1 + 10)) + "px";
-
+    PlayerHitCounter_1 += 10;
+    meterBar1.style.height = (50 + PlayerHitCounter_1) + "px";
     document.getElementById("displayPLayerCounter1").innerHTML = PlayerHitCounter_1;
 }
 
 // Player 2
 function playerHit_2() {
-
-    meterBar2.style.height = (50 + (PlayerHitCounter_2 = PlayerHitCounter_2 + 10)) + "px";
-
+    PlayerHitCounter_2 += 10;
+    meterBar2.style.height = (50 + PlayerHitCounter_2) + "px";
     document.getElementById("displayPLayerCounter2").innerHTML = PlayerHitCounter_2;
 }
+
+// Debounced Button Handlers
+let button1Timeout;
+let button2Timeout;
+
+document.getElementById("playerBtn01").addEventListener("click", function() {
+    clearTimeout(button1Timeout);
+    button1Timeout = setTimeout(playerHit_1, 10);
+});
+
+document.getElementById("playerBtn02").addEventListener("click", function() {
+    clearTimeout(button2Timeout);
+    button2Timeout = setTimeout(playerHit_2, 10);
+});
+
 /*********************************************************************************************************
  * 
  * 
